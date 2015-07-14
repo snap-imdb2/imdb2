@@ -1,4 +1,24 @@
 package org.snapimdb2;
-public class ReviewMetaData {
 
+import java.util.Calendar;
+
+public class ReviewMetaData {
+	private String review;
+	private Calendar reviewDateTime;
+	
+	public String getReview() {
+		return review;
+	}
+
+	public Calendar getReviewDate() {
+		return reviewDateTime;
+	}
+
+	public void setReviewDate(Calendar reviewDate) {
+		this.reviewDateTime = reviewDate;
+	}
+
+	public void setReview(String review) {
+		this.review = review;
+	}
 }
