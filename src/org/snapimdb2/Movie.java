@@ -5,6 +5,18 @@ import java.util.ArrayList;
 import org.snapimdb2.meta.MovieMetaData;
 
 public class Movie {
+    
+    private class Rating {
+        
+        private long totalNumberOfRatings;
+        private long totalSumOfRatings;
+        
+        public Rating() {
+            totalNumberOfRatings = 0;
+            totalSumOfRatings = 0;
+        }
+        
+    }
 	
 	private MovieMetaData movieMetaData;
 	private Long movieId;
@@ -19,10 +31,16 @@ public class Movie {
 		this.movieMetaData = movieMetaData;
 	}
 	
-	public Rating getRating() {return rating;}
-	
 	public void addRating(int rating) {
-	    this.rating.addRating(rating);
+	    this.rating.totalNumberOfRatings++;
+        this.rating.totalSumOfRatings+=rating;
 	}
-
+	
+	public long getTotalNumberOfRatings() {
+        return rating.totalNumberOfRatings;
+    }
+	
+	public double getRating(){
+        return (((double)rating.totalSumOfRatings)/rating.totalNumberOfRatings);
+    }
 }
