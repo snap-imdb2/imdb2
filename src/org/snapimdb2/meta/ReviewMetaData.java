@@ -1,4 +1,4 @@
-package org.snapimdb2;
+package org.snapimdb2.meta;
 
 import java.util.Calendar;
 
