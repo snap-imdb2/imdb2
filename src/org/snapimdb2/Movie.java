@@ -1,6 +1,6 @@
 package org.snapimdb2;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.snapimdb2.meta.MovieMetaData;
 
@@ -21,7 +21,7 @@ public class Movie {
 	private MovieMetaData movieMetaData;
 	private Long movieId;
 	private Rating rating;
-	private ArrayList<Long> ratingAndReviewIds;
+	private String description;
 	
 	public MovieMetaData getMovieMetaData() {
 		return movieMetaData;
