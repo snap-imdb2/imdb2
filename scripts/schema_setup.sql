@@ -9,3 +9,7 @@ numberOfRatings INT,
 sumOfRatings INT,
 description TEXT
 );
+
+create table ratingAndReview (
+
+)
