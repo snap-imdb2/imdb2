@@ -11,6 +11,7 @@ public class MovieMetaData {
     
     private String movieName;
     private int durationInMinutes;
+    //fsa
     private String directorName;
     private ContentRating contentRating;
     private List<Genres> genres = new ArrayList<>();
