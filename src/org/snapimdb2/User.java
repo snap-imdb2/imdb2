@@ -6,14 +6,9 @@ import org.snapimdb2.meta.UserMetaData;
 
 public class User {
 	private long userId;
-	private List<Long> listOfRatingsAndReviewIds;
 	private UserMetaData userMetaData;
 	private boolean isAdmin;
-	
-	public List<Long> getListOfRatingsAndReviewIds() {
-		return listOfRatingsAndReviewIds;
-	}
-	
+		
 	public UserMetaData getUserMetaData() {
 		return userMetaData;
 	}
