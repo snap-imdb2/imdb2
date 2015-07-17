@@ -3,34 +3,24 @@ package org.snapimdb2;
 import org.snapimdb2.meta.ReviewMetaData;
 
 public class RatingAndReview {
-	private String reviewId;
-	private String userId;
-	private String movieId;
+	private long reviewId;
+	private long userId;
+	private long movieId;
+	private int ratingValue;
 	private ReviewMetaData reviewMetaData;
 	
-	public String getReviewId() {
-		return reviewId;
-	}
+	public RatingAndReview(long userId, long movieId, int ratingValue) {
+	    this.userId = userId;
+	    this.movieId = movieId;
+	    this.ratingValue = ratingValue;
+    }
 	
-	public void setReviewId(String reviewId) {
-		this.reviewId = reviewId;
-	}
-	
-	public String getUserId() {
-		return userId;
-	}
-	
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	
-	public String getMovieId() {
-		return movieId;
-	}
-	
-	public void setMovieId(String movieId) {
-		this.movieId = movieId;
-	}
+	public RatingAndReview(long userId, long movieId, int ratingValue,ReviewMetaData reviewMetaData) {
+        this.userId = userId;
+        this.movieId = movieId;
+        this.ratingValue = ratingValue;
+        this.reviewMetaData = reviewMetaData;
+    }
 	
 	public ReviewMetaData getReviewMetaData() {
 		return reviewMetaData;
