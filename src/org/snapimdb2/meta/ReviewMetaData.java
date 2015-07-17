@@ -5,7 +5,6 @@ import java.util.Calendar;
 public class ReviewMetaData {
 	private String review;
 	private Calendar reviewDateTime;
-	
 	public String getReview() {
 		return review;
 	}

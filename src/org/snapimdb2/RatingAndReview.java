@@ -3,7 +3,6 @@ package org.snapimdb2;
 import org.snapimdb2.meta.ReviewMetaData;
 
 public class RatingAndReview {
-	private long reviewId;
 	private long userId;
 	private long movieId;
 	private int ratingValue;

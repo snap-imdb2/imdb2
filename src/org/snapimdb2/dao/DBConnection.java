@@ -14,18 +14,13 @@ import java.sql.SQLException;
 public class DBConnection {
     
     final static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    final static String DB_URL = "jdbc:mysql://localhost:3306/dbimdb";
+    final static String DB_URL = "jdbc:mysql://localhost:3306/db_imdb";
     final static String USER = "root";
     final static String PASS = "admin";
 
-    private static Connection connection = null;
-
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        if(connection==null){
-            Class.forName(JDBC_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            return connection;         
-        }
+        Class.forName(JDBC_DRIVER);
+        Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
         return connection;
     }
 

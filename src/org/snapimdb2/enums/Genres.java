@@ -8,9 +8,11 @@
 package org.snapimdb2.enums;
 
 public enum Genres {
-    Action,Adventure
-    ,Comedy
+      Action
+    , Adventure
+    , Comedy
     , Crime
+    , Drama
     , Fantasy
     , Historical
     , Historical_fiction
