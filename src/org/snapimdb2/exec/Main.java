@@ -12,6 +12,5 @@ import org.snapimdb2.dao.AddMovieDAO;
 public class Main {
     public static void main(String[] args){
         AddMovieDAO addMovieDAO = new AddMovieDAO();
-        addMovieDAO.addMovie(1, 113, "Dabang", "Abhinav Kashyap");
     }
 }

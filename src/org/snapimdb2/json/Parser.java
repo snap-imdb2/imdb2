@@ -11,12 +11,16 @@ import java.nio.charset.Charset;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.snapimdb2.dao.AddMovieDAO;
+
 
 public class Parser {
+	public static int movie_id_counter = 0;
 	
 	public static void main(String[] args){
+		AddMovieDAO dao = new AddMovieDAO();
+		
 		for(int i=100000; i<= 999999; i++){
-			int naCount = 0;
 			try {
 				String movieID = "tt0" + i; 
 				JSONObject json = readJsonFromUrl("http://www.omdbapi.com/?i=" + movieID +"&plot=short&r=json");
@@ -24,34 +28,39 @@ public class Parser {
 				String title = json.get("Title").toString();
 				
 				String year = (String)json.get("Year");
-				if(year.equals("N/A"))
-					naCount++;
-				else
+				if(!title.equals("N/A"))
 					title = title + " (" + year + ")";
 				
 				String duration = json.get("Runtime").toString();
 				if(duration.equals("N/A"))
-					naCount++;
+					continue;
 				
 				String director = json.get("Director").toString();
-				if(duration.equals("N/A"))
-					naCount++;
+				if(director.equals("N/A"))
+					continue;
 				
 				String contentRating = json.get("Rated").toString();
-				if(duration.equals("N/A"))
-					naCount++;
+				if(contentRating.equals("N/A"))
+					continue;
 				
 				String genre = json.get("Genre").toString();
-				if(duration.equals("N/A"))
-					naCount++;
+				if(genre.equals("N/A"))
+					continue;
 				
 				String description = json.get("Plot").toString();
-				if(duration.equals("N/A"))
-					naCount++;
+				if(description.equals("N/A"))
+					continue;
 				
-				if(naCount == 0){
-					//push into table..Still there are conflicts .. N/A movies still appear. Reason unknown :(
-				}
+				System.out.println("title: "+title);
+				System.out.println("dur: "+duration);
+				System.out.println("dir: "+director);
+				System.out.println("content: "+contentRating);
+				System.out.println("genre: "+genre);
+				System.out.println("desc: "+description);
+				System.out.println("-----------------------------");
+				
+				dao.addMovie(movie_id_counter++, duration, title, director, contentRating, genre, description);
+				
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -73,5 +82,5 @@ public class Parser {
 		
 		return json;
 	}
-	
+
 }

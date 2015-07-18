@@ -7,7 +7,6 @@
  */
 package org.snapimdb2.dao;
 
-import java.io.Closeable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,21 +17,28 @@ public class AddMovieDAO {
     private PreparedStatement pStatement;
     
     public AddMovieDAO(){
-        try {
-           this.connection = DBConnection.getConnection();
-           pStatement = connection.prepareStatement("insert into movie" +
-                   "(movie_id, duration, movieName, director) values (?,?,?,?);");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
+    	try {
+            this.connection = DBConnection.getConnection();
+            pStatement = connection.prepareStatement("insert into movie" +
+                    "(movie_id, duration, movieName, director, contentRating, genre, description) values (?,?,?,?,?,?,?);");
+         } catch (SQLException e) {
+             e.printStackTrace();
+         } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
-    public void addMovie(int movie_id, int duration, String movieName, String director) {
+    public void addMovie(int movie_id, String duration, String movieName, String director, String contentRating
+    		, String genre, String description) {
         try{      
             pStatement.setInt(1, movie_id);
-            pStatement.setInt(2, duration);
+            pStatement.setString(2, duration);
             pStatement.setString(3, movieName);
             pStatement.setString(4, director);
+            pStatement.setString(5, contentRating);
+            pStatement.setString(6, genre);
+            pStatement.setString(7, description);
             pStatement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
