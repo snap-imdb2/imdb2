@@ -1,9 +1,9 @@
 body
 {
 	font-family: "Open sans", sans-serif;
-	background-color:#333;
 	margin:0;
 	padding:0;
+	background-size: cover;
 }
 
 #wrapper{ width:1000px; margin:0 auto;}
