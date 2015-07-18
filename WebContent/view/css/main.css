@@ -1,0 +1,126 @@
+html{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  height: auto;
+  margin: 0;
+}
+
+.header{
+  background-color: gold;
+  height: 100px;
+  margin: 0 0 0 0;
+}
+
+.header .logo{
+  width: 15%;
+  font-family: 'Alfa Slab One', cursive;
+  margin: 0 0 0 0;
+  height: inherit;
+  float: left;
+  color: black;
+}
+
+.header .logo a{
+  text-decoration: none;
+}
+
+.header .options{
+  width: 70%;
+  margin: 0 0 0 0;
+  height: inherit;
+  float: left;
+}
+
+.header .userDetails{
+  width: 15%;
+  height: inherit;
+  float: left;
+}
+
+.content{
+  overflow: auto;
+  width: 100%;
+  background-color: #a4a4a4;
+}
+
+.content .page-content{
+  min-height: 100px;
+  color: #fff;
+  float: left;
+  width: 75%;
+  background-color: #f0f0f0;
+}
+
+.content .filter-content{
+  min-height: 100px;
+  color: #000;
+  width: 25%;
+  right: 0;
+  background-color: #1e1e1e;
+  position: fixed;
+}
+
+.footer{
+  background-color: #000;
+  height: 100px;
+  color: #fff;
+  font-family: 'Open sans', sans-serif;
+}
+
+.footer .footer-content{
+  height: 40px;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #F2F2F2;
+}
+
+.footer .footer-content #dummy-left{
+  float: left;
+  width: 30%;
+  margin: 0 0 0 0;
+}
+
+.footer .footer-content #dummy-right{
+  float: left;
+  width: 30%;
+  margin: 0 0 0 0;
+}
+
+.footer .footer-content #contact-info{
+  float: left;
+  width: 34%;
+  font-size: 25px;
+  margin: 0 0 0 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer .copyright{
+  height: 40px;
+  font-size: 12px;
+  color: #A4A4A4;
+  float: left;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.footer .copyright #dummy-left{
+  float: left;
+  width: 42.5%;
+}
+
+.footer .copyright #dummy-right{
+  float: left;
+  width: 42.5%;
+}
+
+.footer .copyright #copyright{
+  float: left;
+  width: 15%;
+  margin: 0 0 0 0;
+}
