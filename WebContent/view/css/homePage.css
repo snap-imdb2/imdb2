@@ -1,0 +1,162 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	height: auto;
+	margin: 0;
+}
+
+tr{
+	font-style: italic;
+	text-align: center;
+	padding: 2px;
+}
+
+th{
+	border: 1px solid black;
+	padding: 5px;
+}
+
+td{
+	padding: 5px;
+}
+
+.header {
+	background-color: #f9f7a2;
+	height: 100px;
+	margin: 0 0 0 0;
+}
+
+.logo {
+	width: 90%;
+	font-family: 'Ariel', cursive;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	margin: 1 1 1 1;	
+	color: red;
+	padding: 5px;
+	float: left
+}
+
+.login {
+	width: 100%;
+	font-family: 'Times New Roman', cursive;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	margin: 1 1 1 1;
+	color: red;
+	padding: 5px;
+}
+
+.search{
+	width:100%;
+	max-width:100%;
+	text-align: center;	
+} 
+
+.searchText{
+	margin-left: auto;
+    margin-right: auto;
+ 	width: 500px;
+}
+
+.searchText, .searchButton{
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#666;
+	border:1px solid #0076a3; 	
+	border-top-left-radius: 5px 5px;	
+	border-bottom-left-radius: 5px 5px;	
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;		
+}
+
+.content {
+	overflow: auto;
+	width: 100%;
+	background-color: #a4a4a4;
+}
+
+.content .page-content {
+	min-height: 100px;
+	color: #000;
+	float: left;
+	width: 75%;
+	background-color: #f5f5f5;
+}
+
+.content .filter-content {
+	min-height: 100px;
+	color: #fff;
+	width: 25%;
+	right: 0;
+	background-color: #1e1e1e;
+	position: fixed;
+}
+
+.footer {
+	background-color: #000;
+	height: 100px;
+	color: #fff;
+	font-family: 'Open sans', sans-serif;
+}
+
+.footer .footer-content {
+	height: 40px;
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #F2F2F2;
+}
+
+.footer .footer-content #dummy-left {
+	float: left;
+	width: 30%;
+	margin: 0 0 0 0;
+}
+
+.footer .footer-content #dummy-right {
+	float: left;
+	width: 30%;
+	margin: 0 0 0 0;
+}
+
+.footer .footer-content #contact-info {
+	float: left;
+	width: 34%;
+	font-size: 25px;
+	margin: 0 0 0 0;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.footer .copyright {
+	height: 40px;
+	font-size: 12px;
+	color: #A4A4A4;
+	float: left;
+	margin-bottom: 0;
+	width: 100%;
+}
+
+.footer .copyright #dummy-left {
+	float: left;
+	width: 42.5%;
+}
+
+.footer .copyright #dummy-right {
+	float: left;
+	width: 42.5%;
+}
+
+.footer .copyright #copyright {
+	float: left;
+	width: 15%;
+	margin: 0 0 0 0;
+}

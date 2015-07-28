@@ -1,4 +1,4 @@
-package org.snapimdb2.json;
+package org.snapimdb2.crawler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.sql.SQLException;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -17,7 +18,7 @@ import org.snapimdb2.dao.AddMovieDAO;
 public class Parser {
 	public static int movie_id_counter = 0;
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws ClassNotFoundException, SQLException{
 		AddMovieDAO dao = new AddMovieDAO();
 		
 		for(int i=100000; i<= 999999; i++){
@@ -79,7 +80,6 @@ public class Parser {
 		InputStream is = new URL(url).openStream();
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8"))));
-		
 		return json;
 	}
 

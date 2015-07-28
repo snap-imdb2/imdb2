@@ -43,20 +43,21 @@ body{
 .content{
   overflow: auto;
   width: 100%;
-  background-color: #a4a4a4;
+  background-color: #f5f5f5;
+  min-height: 500px;
 }
 
 .content .page-content{
   min-height: 100px;
-  color: #fff;
+  color: #000;
   float: left;
   width: 75%;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
 }
 
 .content .filter-content{
   min-height: 100px;
-  color: #000;
+  color: #fff;
   width: 25%;
   right: 0;
   background-color: #1e1e1e;

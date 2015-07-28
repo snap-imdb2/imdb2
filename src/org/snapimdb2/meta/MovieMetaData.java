@@ -10,27 +10,27 @@ import org.snapimdb2.enums.Genres;
 public class MovieMetaData {
     
     private String movieName;
-    private int durationInMinutes;
+    private String durationInMinutes;
     private String directorName;
     private ContentRating contentRating;
-    private List<Genres> genres = new ArrayList<>();
+    private Genres genres;
     
-    public MovieMetaData(String movieName, int durationInMinutes, String directorName, ContentRating contentRating, List<Genres> genres) {
+    public MovieMetaData(String movieName, String string, String directorName, ContentRating contentRating, Genres genres2) {
         this.movieName = movieName;
-        this.durationInMinutes = durationInMinutes;
+        this.durationInMinutes = string;
         this.directorName = directorName;
         this.contentRating = contentRating;
-        this.genres = genres;
+        this.setGenres(genres2);
     }
     
     public MovieMetaData(String movieName, String directorName){
         this.movieName = movieName;
         this.directorName = directorName;
-        durationInMinutes = 0;
+        durationInMinutes = "";
         contentRating = ContentRating.U;
     }
     
-    public MovieMetaData(String movieName, int durationInMinutes, String directorName) {
+    public MovieMetaData(String movieName, String durationInMinutes, String directorName) {
         this.movieName = movieName;
         this.durationInMinutes = durationInMinutes;
         this.directorName = directorName;
@@ -45,11 +45,11 @@ public class MovieMetaData {
         this.movieName = movieName;
     }
 
-    public int getDurationInMinutes() {
+    public String getDurationInMinutes() {
         return durationInMinutes;
     }
 
-    public void setDurationInMinutes(int durationInMinutes) {
+    public void setDurationInMinutes(String durationInMinutes) {
         this.durationInMinutes = durationInMinutes;
     }
 
@@ -69,11 +69,12 @@ public class MovieMetaData {
         this.contentRating = contentRating;
     }
 
-    public List<Genres> getGenres() {
+    public Genres getGenres() {
         return genres;
     }
 
-    public void setGenres(List<Genres> genres) {
+    public void setGenres(Genres genres) {
         this.genres = genres;
     }
+
 }

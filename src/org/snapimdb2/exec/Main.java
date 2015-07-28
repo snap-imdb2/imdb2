@@ -4,11 +4,17 @@
  */
 package org.snapimdb2.exec;
 
+import java.sql.SQLException;
+
 import org.snapimdb2.dao.AddMovieDAO;
 
 public class Main {
     public static void main(String[] args){
-        AddMovieDAO addMovieDAO = new AddMovieDAO();
+        try {
+            AddMovieDAO addMovieDAO = new AddMovieDAO();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
         //addMovieDAO.addMovie(1, 113, "Dabang", "Abhinav Kashyap");
     }
 }

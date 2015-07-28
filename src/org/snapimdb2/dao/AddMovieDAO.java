@@ -4,31 +4,32 @@
  */
 package org.snapimdb2.dao;
 
-import java.io.Closeable;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddMovieDAO {
+public class AddMovieDAO extends AddMovie {
+
+    private PreparedStatement pStatement = null;
+    private PreparedStatement pStatement2 = null;
     
-    private Connection connection;
-    private PreparedStatement pStatement;
-    private PreparedStatement pStatement2;
+    public AddMovieDAO() throws ClassNotFoundException, SQLException {
+        super();
+    }
     
-    public AddMovieDAO(){
-        try {
-           this.connection = DBConnection.getConnection();
-           pStatement = connection.prepareStatement("insert into movie" +
-                   "(movie_id, duration, movieName, director) values (?,?,?,?);");
-           pStatement2 = connection.prepareStatement("insert into movie" +
-                   "(movie_id, duration, movieName, director, contentRating, genre, description) values (?,?,?,?,?,?,?);");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
+    void pStatementInit() throws SQLException{
+        pStatement = connection.prepareStatement("insert into movie" +
+                "(movie_id, duration, movieName, director) values (?,?,?,?);");
+    }
+    
+    void pStatement2Init() throws SQLException{
+        pStatement2 = connection.prepareStatement("insert into movie" +
+            "(movie_id, duration, movieName, director, contentRating, genre, description) values (?,?,?,?,?,?,?);");
     }
     
     public void addMovie(int movie_id, int duration, String movieName, String director) {
-        try{      
+        try{
+            if(pStatement == null)
+                pStatementInit();
             pStatement.setInt(1, movie_id);
             pStatement.setInt(2, duration);
             pStatement.setString(3, movieName);
@@ -41,7 +42,9 @@ public class AddMovieDAO {
     
     public void addMovie(int movie_id, String duration, String movieName, String director, String contentRating
             , String genre, String description) {
-        try{      
+        try{
+            if(pStatement2 == null)
+                pStatement2Init();
             pStatement2.setInt(1, movie_id);
             pStatement2.setString(2, duration);
             pStatement2.setString(3, movieName);
@@ -57,8 +60,10 @@ public class AddMovieDAO {
     
     void close(){
         try {
-            pStatement.close();
-            pStatement2.close();
+            if(pStatement!=null)
+                pStatement.close();
+            if(pStatement2!=null)
+                pStatement2.close();
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,8 +73,10 @@ public class AddMovieDAO {
     @Override
     public void finalize(){
         try {
-            if(!pStatement.isClosed())
-                pStatement.close();          
+            if(pStatement!=null && !pStatement.isClosed())
+                pStatement.close();
+            if(pStatement2!=null && !pStatement2.isClosed())
+                pStatement2.close();
             if(!connection.isClosed())
                 connection.close();
         } catch (SQLException e) {

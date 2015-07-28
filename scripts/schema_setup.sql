@@ -26,3 +26,8 @@ review TEXT,
 reviewDateTime DATE,
 primary key(movie_id, user_id)
 );
+
+create table imdb_movies (
+imdb_id INT UNSIGNED primary key,
+movie_id INT UNSIGNED references movie(movie_id)
+);

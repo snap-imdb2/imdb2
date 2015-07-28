@@ -45,4 +45,16 @@ public class Movie {
 			return -1;
         return (((double)rating.totalSumOfRatings)/rating.totalNumberOfRatings);
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
 }
