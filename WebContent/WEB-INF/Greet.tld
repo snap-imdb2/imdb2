@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>myTag</short-name>
+	
+	<tag>
+		<name>greet</name>
+		<tag-class>org.snapimdb2.GreetTag</tag-class>
+		<body-content>jsp</body-content>
+		
+		<attribute>
+			<name>userName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue><!--  Dynamic value allowed or not -->
+		</attribute>
+		
+		<attribute>
+			<name>city</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>
